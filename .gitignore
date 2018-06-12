@@ -1,0 +1,16 @@
+*.iml
+.idea
+.gradle*
+!gradle-plugins*
+gradle-app.setting
+!gradel-wrapper.jar
+.gradeltasknamecache
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+gen
