@@ -3,15 +3,18 @@ package journaler.ollie.study.journaler.activity
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_header.*
 
 abstract class BaseActivity : FragmentActivity() {
 
     protected abstract val tag: String
     protected abstract fun getLayout(): Int
+    protected abstract fun getActivityTile(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
+        activity_title.setText(getActivityTile())
         Log.v(tag, "[ON CREATE")
     }
     override fun onPostCreate(savedInstanceState: Bundle?) {
