@@ -7,18 +7,33 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.MainActivity"
     tools:showIn="@layout/activity_main">
-    <android.support.v7.widget.LinearLayoutCompat
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include layout="@layout/activity_header" />
-
-        <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/pager"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/darker_gray">
+            <include layout="@layout/toolbar"/>
 
-    </android.support.v7.widget.LinearLayoutCompat>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+        <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="1dp"
+            android:layout_gravity="start"/>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </android.support.constraint.ConstraintLayout>
